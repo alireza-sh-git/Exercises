@@ -1,11 +1,31 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
-let calculationDescription = `(${defaultResult} + 10) * 3 / 2 -1`;
 
-currentResult = add(1,2);
+addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
 
-outputResult(currentResult, calculationDescription);
+function add() {
+    let calculationDescription = currentResult + " + " + userInput.value;
+    currentResult = currentResult + Number(userInput.value);
+    outputResult(currentResult, calculationDescription);
+}
 
-function add(num1, num2) {
-    return num1 + num2;
+function subtract() {
+    let calculationDescription = currentResult + " - " + userInput.value;
+    currentResult = currentResult - Number(userInput.value);
+    outputResult(currentResult, calculationDescription);
+}
+
+function multiply() {
+    let calculationDescription = currentResult + " x " + userInput.value;
+    currentResult = currentResult * Number(userInput.value);
+    outputResult(currentResult, calculationDescription);
+}
+
+function divide() {
+    let calculationDescription = currentResult + " ÷ " + userInput.value;
+    currentResult = currentResult / Number(userInput.value);
+    outputResult(currentResult, calculationDescription);
 }
