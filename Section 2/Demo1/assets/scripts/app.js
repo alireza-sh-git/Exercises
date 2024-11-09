@@ -6,26 +6,35 @@ subtractBtn.addEventListener("click", subtract);
 multiplyBtn.addEventListener("click", multiply);
 divideBtn.addEventListener("click", divide);
 
+// Can also use "parseint" and "parsefloat" instead of Number(). subtle differences...
 function add() {
-    let calculationDescription = currentResult + " + " + userInput.value;
-    currentResult = currentResult + Number(userInput.value);
+    const enteredNumber = getUserInputNumber();
+    let calculationDescription = currentResult + " + " + enteredNumber;
+    currentResult = currentResult + enteredNumber;
     outputResult(currentResult, calculationDescription);
 }
 
 function subtract() {
-    let calculationDescription = currentResult + " - " + userInput.value;
-    currentResult = currentResult - Number(userInput.value);
+    const enteredNumber = getUserInputNumber();
+    let calculationDescription = currentResult + " - " + enteredNumber;
+    currentResult = currentResult - enteredNumber;
     outputResult(currentResult, calculationDescription);
 }
 
 function multiply() {
-    let calculationDescription = currentResult + " x " + userInput.value;
-    currentResult = currentResult * Number(userInput.value);
+    const enteredNumber = getUserInputNumber();
+    let calculationDescription = currentResult + " x " + enteredNumber;
+    currentResult = currentResult * enteredNumber;
     outputResult(currentResult, calculationDescription);
 }
 
 function divide() {
-    let calculationDescription = currentResult + " ÷ " + userInput.value;
-    currentResult = currentResult / Number(userInput.value);
+    const enteredNumber = getUserInputNumber();
+    let calculationDescription = currentResult + " ÷ " + enteredNumber;
+    currentResult = currentResult / enteredNumber;
     outputResult(currentResult, calculationDescription);
+}
+
+function getUserInputNumber (){
+    return parseInt(userInput.value)
 }
